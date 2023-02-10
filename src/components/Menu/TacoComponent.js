@@ -3,7 +3,7 @@ export function TacoComponent({ name, children }) {
     <div>
       <h2>{name}</h2>
 
-      {children}
+      <div className="menu-items">{children}</div>
     </div>
   );
 }

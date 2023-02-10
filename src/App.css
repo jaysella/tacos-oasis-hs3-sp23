@@ -10,6 +10,7 @@ body {
   box-sizing: border-box;
   background-color: var(--blue);
   color: var(--white);
+  overflow-x: hidden;
 }
 
 .page-wrapper {
@@ -38,8 +39,8 @@ body {
   cursor: pointer;
 }
 
-.taco-truck.animate {
-  animation: drive 15s ease-in-out infinite;
+.taco-truck.animate svg {
+  animation: drive 15s ease-in-out forwards;
 }
 
 @media screen and (min-width: 720px) {
@@ -59,19 +60,19 @@ body {
     transform: translateX(0);
   }
   30.999% {
-    transform: translateX(125vw);
+    transform: translateX(115vw);
   }
   31% {
-    transform: translateX(125vw) rotateY(180deg);
+    transform: translateX(115vw) rotateY(180deg);
   }
   31.001% {
     transform: translateX(100vw) rotateY(180deg);
   }
   63.999% {
-    transform: translateX(-125vw) rotateY(180deg);
+    transform: translateX(-115vw) rotateY(180deg);
   }
   64% {
-    transform: translateX(-125vw) rotateY(0deg);
+    transform: translateX(-115vw) rotateY(0deg);
   }
   64.001% {
     transform: translateX(-100vw) rotateY(0deg);
