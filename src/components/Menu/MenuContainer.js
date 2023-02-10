@@ -1,5 +1,5 @@
 import "./Menu.css";
 
-export function Menu({ children }) {
+export function MenuContainer({ children }) {
   return <div className="menu">{children}</div>;
 }

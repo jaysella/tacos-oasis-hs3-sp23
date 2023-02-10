@@ -6,7 +6,7 @@ export function Header() {
       <h1>Oasis Taquería</h1>
 
       <p className="sub-headline">
-        <b>We've swapped out our keyboards ⌨️ for tortilla presses 🌮</b>
+        <b>We've swapped out our keyboards 💻 for tortilla presses 🌮</b>
       </p>
 
       <p>

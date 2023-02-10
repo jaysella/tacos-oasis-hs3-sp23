@@ -25,6 +25,13 @@ body {
   gap: 3rem;
 }
 
+.button#generate {
+  display: block;
+  margin-top: -3.85rem;
+  float: right;
+  margin-bottom: calc(3.85rem / 2);
+}
+
 .taco-truck {
   margin-top: 35px;
   margin-bottom: -115px;
