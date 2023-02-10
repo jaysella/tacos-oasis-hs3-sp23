@@ -26,6 +26,12 @@ body {
   gap: 3rem;
 }
 
+.highlights-menu-row {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 3rem;
+}
+
 .button#generate {
   display: block;
   margin-top: -3.85rem;
@@ -36,6 +42,7 @@ body {
 .taco-truck {
   margin-top: 50px;
   margin-bottom: -115px;
+  width: min-content;
   cursor: pointer;
 }
 
@@ -49,9 +56,17 @@ body {
     gap: 2.75rem;
   }
 
-  .highlights-menu {
-    flex-direction: row;
-    gap: 5rem;
+  .highlights-menu-row {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4rem;
+  }
+
+  .highlights-menu-row.row-span-3 > div {
+    grid-column: span 3;
+  }
+
+  .highlights-menu-row.row-span-2 > div {
+    grid-column: span 2;
   }
 }
 

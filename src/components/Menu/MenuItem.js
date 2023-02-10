@@ -1,4 +1,8 @@
 export function MenuItemLink({ url, name, description, tags }) {
+  console.log("---");
+  console.log(name);
+  console.log(description);
+  console.log("---");
   return (
     <a
       href={url}
@@ -10,7 +14,9 @@ export function MenuItemLink({ url, name, description, tags }) {
         <b>{name}</b>
         {tags && tags.length > 0 && <small>&nbsp; (v)</small>}
       </p>
-      {description && <p className="description">{description}</p>}
+      {description && description.length > 0 && (
+        <p className="description">{description}</p>
+      )}
     </a>
   );
 }
@@ -22,7 +28,9 @@ export function MenuItem({ name, description, tags, ...props }) {
         <b>{name}</b>
         {tags && tags.length > 0 && <small>&nbsp; (v)</small>}
       </p>
-      {description && <p className="description">{description}</p>}
+      {description && description.length > 0 && (
+        <p className="description">{description}</p>
+      )}
     </div>
   );
 }

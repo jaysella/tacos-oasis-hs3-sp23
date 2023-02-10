@@ -11,8 +11,8 @@ export function Header() {
 
       <p>
         With salsas are as spicy as our code, we offer members a delicious break
-        from the screen that will tantalize taste buds. You can try a curated
-        taco or build your own from a bunch of bases and toppings.
+        from the screen that will tantalize taste buds. We'll have a new taco
+        ready for you every time you come back. Make sure to visit us often!
       </p>
     </header>
   );

@@ -7,6 +7,7 @@ import { MenuContainer } from "./components/Menu/MenuContainer";
 import { MenuItem, MenuItemLink } from "./components/Menu/MenuItem";
 import { TacoComponent } from "./components/Menu/TacoComponent";
 import { TacoTruck } from "./components/TacoTruck";
+import { truncate } from "./lib/truncate";
 
 function App() {
   const [animateTacoTruck, setAnimateTacoTruck] = useState(false);
@@ -14,10 +15,14 @@ function App() {
 
   async function getRandomTaco() {
     await axios
-      .get("https://tacos.girocibo.com/api/tacos") // GET the members from this endpoint
+      .get("https://tacos.girocibo.com/api/tacos/generate")
       .then(({ data }) => {
-        setRecipe(data[0]);
-        console.log(data[0]);
+        if (data.error) {
+          console.error(data.error);
+          alert("An error occurred.");
+        } else {
+          setRecipe(data);
+        }
       })
       .catch((err) => {
         console.error(err);
@@ -37,77 +42,93 @@ function App() {
         {recipe ? (
           <>
             <div className="highlights-menu">
-              <TacoComponent name="Base">
-                {recipe.bases.map((b) => (
-                  <MenuItemLink
-                    key={b.url}
-                    url={b.url}
-                    name={b.name}
-                    description={b.recipe.replace(/^(?!#|\*).*$/gm, "")}
-                    tags={b.tags}
-                  />
-                ))}
-              </TacoComponent>
-
-              <TacoComponent name="Mixin">
-                {recipe.mixins.length > 0 ? (
-                  recipe.mixins.map((b) => (
+              <div className="highlights-menu-row row-span-3">
+                <TacoComponent name="Base">
+                  {recipe.bases.map((b) => (
                     <MenuItemLink
                       key={b.url}
                       url={b.url}
                       name={b.name}
-                      description={b.recipe.replace(/^(?!#|\*).*$/gm, "")}
+                      description={truncate(b.recipe_text, 150)}
                       tags={b.tags}
                     />
-                  ))
-                ) : (
-                  <MenuItem name="None" />
-                )}
-              </TacoComponent>
+                  ))}
+                </TacoComponent>
 
-              <TacoComponent name="Condiment">
-                {recipe.condiments.length > 0 ? (
-                  recipe.condiments.map((b) => (
+                <TacoComponent name="Mixin">
+                  {recipe.mixins.length > 0 ? (
+                    recipe.mixins.map((b) => (
+                      <MenuItemLink
+                        key={b.url}
+                        url={b.url}
+                        name={b.name}
+                        description={truncate(b.recipe_text, 150)}
+                        tags={b.tags}
+                      />
+                    ))
+                  ) : (
+                    <MenuItem name="None" />
+                  )}
+                </TacoComponent>
+              </div>
+
+              <div className="highlights-menu-row row-span-2">
+                <TacoComponent name="Condiment">
+                  {recipe.condiments.length > 0 ? (
+                    recipe.condiments.map((b) => (
+                      <MenuItemLink
+                        key={b.url}
+                        url={b.url}
+                        name={b.name}
+                        description={truncate(b.recipe_text, 150)}
+                        tags={b.tags}
+                      />
+                    ))
+                  ) : (
+                    <MenuItem name="None" />
+                  )}
+                </TacoComponent>
+
+                <TacoComponent name="Seasoning">
+                  {recipe.seasonings.length > 0 ? (
+                    recipe.seasonings.map((b) => (
+                      <MenuItemLink
+                        key={b.url}
+                        url={b.url}
+                        name={b.name}
+                        description={truncate(b.recipe_text, 150)}
+                        tags={b.tags}
+                      />
+                    ))
+                  ) : (
+                    <MenuItem name="None" />
+                  )}
+                </TacoComponent>
+
+                <TacoComponent name="Shell">
+                  {recipe.shell ? (
                     <MenuItemLink
-                      key={b.url}
-                      url={b.url}
-                      name={b.name}
-                      description={b.recipe.replace(/^(?!#|\*).*$/gm, "")}
-                      tags={b.tags}
+                      url={recipe.shell.url}
+                      name={recipe.shell.name}
+                      description={truncate(recipe.shell.recipe_text, 150)}
+                      tags={recipe.shell.tags}
                     />
-                  ))
-                ) : (
-                  <MenuItem name="None" />
-                )}
-              </TacoComponent>
-
-              <TacoComponent name="Seasoning">
-                {recipe.seasoning ? (
-                  <MenuItemLink
-                    url={recipe.seasoning.url}
-                    name={recipe.seasoning.name}
-                    description={recipe.seasoning.recipe.replace(
-                      /^(?!#|\*).*$/gm,
-                      ""
-                    )}
-                  />
-                ) : (
-                  <MenuItem name="None" />
-                )}
-              </TacoComponent>
+                  ) : (
+                    <MenuItem name="None" />
+                  )}
+                </TacoComponent>
+              </div>
             </div>
 
             <div
-              className={["taco-truck", animateTacoTruck ? "animate" : ""].join(
-                " "
-              )}
+              className={`taco-truck ${animateTacoTruck ? "animate" : ""}`}
               onClick={() => setAnimateTacoTruck(!animateTacoTruck)}
             >
               <TacoTruck />
             </div>
           </>
         ) : (
-          <p>Loading</p>
+          <p>Loading...</p>
         )}
       </MenuContainer>
 
