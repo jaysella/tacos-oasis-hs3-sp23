@@ -5,7 +5,7 @@ export function Header() {
     <header className="header">
       <h1>Oasis Taquería</h1>
 
-      <p>
+      <p className="sub-headline">
         <b>We've swapped out our keyboards ⌨️ for tortilla presses 🌮</b>
       </p>
 

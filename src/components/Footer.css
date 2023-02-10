@@ -1,11 +1,11 @@
 .footer {
   color: var(--white);
-  padding: 0 2.5rem;
   text-align: center;
 }
 
 .footer p {
-  line-height: 26px;;
+  line-height: 26px;
+  margin: 0;
 }
 
 .footer a {

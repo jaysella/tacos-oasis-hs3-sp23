@@ -4,29 +4,42 @@ export function Featured() {
       <h2>Featured Tacos</h2>
 
       <div className="menu-items">
-        <div className="menu-item">
+        <FeaturedItem>
           <p className="name">
             <b>Asian Style Tacos</b>
           </p>
           <p className="callouts">
             Pork Marinade, Asian Pickled Vegetables, Asian Cabbage Slaw
           </p>
-        </div>
+        </FeaturedItem>
 
-        <div className="menu-item">
+        <FeaturedItem>
           <p className="name">
             <b>Baja Fish Tacos</b>
           </p>
           <p className="callouts">Baja White Sauce</p>
-        </div>
+        </FeaturedItem>
 
-        <div className="menu-item">
+        <FeaturedItem>
           <p className="name">
             <b>Black Bean, Potato, and Onion Tacos</b> <small>(v)</small>
           </p>
           <p className="callouts">Garlic Black Beans</p>
-        </div>
+        </FeaturedItem>
       </div>
     </div>
+  );
+}
+
+function FeaturedItem({ children }) {
+  return (
+    <a
+      href="https://github.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="menu-item"
+    >
+      {children}
+    </a>
   );
 }
