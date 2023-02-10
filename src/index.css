@@ -32,5 +32,5 @@ h2 {
   background-color: var(--gold);
   color: var(--blue);
   border-radius: 50px;
-cursor: pointer;
+  cursor: pointer;
 }

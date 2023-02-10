@@ -26,12 +26,12 @@
   padding-top: 0.25rem;
 }
 
-.menu-items .name {
+.menu-item .name {
   margin: 0;
   font-size: 1.1rem;
 }
 
-.menu-items .callouts {
+.menu-item .description {
   margin-top: 0.4rem;
 }
 
