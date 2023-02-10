@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Featured } from "./components/Featured";
+import { Header } from "./components/Header";
+import { Menu } from "./components/Menu";
+import { Seasonings } from "./components/Seasonings";
+import { TacoTruck } from "./components/TacoTruck";
 
 function App() {
+  const [animateTacoTruck, setAnimateTacoTruck] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="page-wrapper">
+      <Header />
+
+      <Menu>
+        <div className="highlights-menu">
+          <Featured />
+          <Seasonings />
+        </div>
+
+        <div
+          className={["taco-truck", animateTacoTruck && "animate"].join(" ")}
+          onClick={() => setAnimateTacoTruck(!animateTacoTruck)}
         >
-          Learn React
-        </a>
-      </header>
+          <TacoTruck />
+        </div>
+      </Menu>
     </div>
   );
 }

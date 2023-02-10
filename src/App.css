@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+:root {
+  --gold: #f9b169;
+  --blue: #0d1646;
+  --white: #cad6dd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--blue);
+  color: var(--white);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.highlights-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.taco-truck {
+  margin-top: 35px;
+  margin-bottom: -115px;
+  cursor: pointer;
+}
+
+.taco-truck.animate {
+  animation: drive 15s ease-in-out infinite;
+}
+
+@media screen and (min-width: 720px) {
+  .page-wrapper {
+    padding: 4rem 5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .highlights-menu {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+@keyframes drive {
+  0% {
+    transform: translateX(0);
+  }
+  30.999% {
+    transform: translateX(125vw);
+  }
+  31% {
+    transform: translateX(125vw) rotateY(180deg);
+  }
+  31.001% {
+    transform: translateX(100vw) rotateY(180deg);
+  }
+  63.999% {
+    transform: translateX(-125vw) rotateY(180deg);
+  }
+  64% {
+    transform: translateX(-125vw) rotateY(0deg);
+  }
+  64.001% {
+    transform: translateX(-100vw) rotateY(0deg);
+  }
+  97.999% {
+    transform: translateX(0) rotateY(0deg);
+  }
+  98% {
+    transform: translateX(0);
   }
 }
