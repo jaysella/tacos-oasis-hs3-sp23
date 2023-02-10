@@ -1,9 +1,15 @@
 .header {
   margin: 0 auto;
-  text-align: center;
   max-width: 60ch;
+  padding: 0 2.5rem;
 }
 
 .header p {
   line-height: 22px;
+}
+
+@media screen and (min-width: 720px) {
+  .header {
+    text-align: center;
+  }
 }

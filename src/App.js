@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Featured } from "./components/Featured";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Menu } from "./components/Menu";
 import { Seasonings } from "./components/Seasonings";
@@ -25,6 +26,10 @@ function App() {
           <TacoTruck />
         </div>
       </Menu>
+
+      <div style={{ marginTop: `7.5rem` }}>
+        <Footer />
+      </div>
     </div>
   );
 }

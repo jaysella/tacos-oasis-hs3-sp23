@@ -15,9 +15,8 @@ body {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  padding: 1rem;
-  margin-bottom: 5rem;
+  gap: 2rem;
+  padding: 2rem 1rem;
 }
 
 .highlights-menu {
@@ -39,6 +38,7 @@ body {
 @media screen and (min-width: 720px) {
   .page-wrapper {
     padding: 4rem 5rem;
+    gap: 2.75rem;
   }
 
   .highlights-menu {
