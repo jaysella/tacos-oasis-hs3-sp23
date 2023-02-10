@@ -4,7 +4,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { MenuContainer } from "./components/Menu/MenuContainer";
 import { MenuItemLink } from "./components/Menu/MenuItem";
-import { TacoComponent } from "./components/TacoComponent";
+import { TacoComponent } from "./components/Menu/TacoComponent";
 import { TacoTruck } from "./components/TacoTruck";
 
 function App() {
