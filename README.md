@@ -1,4 +1,4 @@
-# Oasis Taquerîa for Oasis Hack Session 3, Spring 2023
+# Oasis Taquería for Oasis Hack Session 3, Spring 2023
 
 Sample app built with students to help teach React and API integration skills. See the slides [here](https://docs.google.com/presentation/d/1mbdSFYw1JSMv3ygRjhbn3Arr0-wCkUKnRjTar89thTg/edit#slide=id.g1dca9265056_0_936).
 
@@ -10,7 +10,7 @@ The API used in the example is available at [jaysella/taco-chef](https://github.
 
 ## Screenshot
 
-<< placeholder >>
+![screenshot](https://user-images.githubusercontent.com/35548468/218208992-1a94ed3d-d459-418a-8012-07be034228d3.png)
 
 ---
 
