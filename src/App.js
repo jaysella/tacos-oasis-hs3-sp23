@@ -3,7 +3,7 @@ import "./App.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { MenuContainer } from "./components/Menu/MenuContainer";
-import { MenuItem, MenuItemLink } from "./components/Menu/MenuItem";
+import { MenuItemLink } from "./components/Menu/MenuItem";
 import { TacoComponent } from "./components/Menu/TacoComponent";
 import { TacoTruck } from "./components/TacoTruck";
 import { truncate } from "./lib/truncate";
