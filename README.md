@@ -2,6 +2,8 @@
 
 Sample app built with students to help teach React and API integration skills. See the slides [here](https://docs.google.com/presentation/d/1mbdSFYw1JSMv3ygRjhbn3Arr0-wCkUKnRjTar89thTg/edit#slide=id.g1dca9265056_0_936).
 
+The `starter` branch contains a static site as a starting point for implementing API logic.
+
 ## Demo
 
 Check out the live site [here](https://tacos-oasis-hs3-sp23.vercel.app)!
