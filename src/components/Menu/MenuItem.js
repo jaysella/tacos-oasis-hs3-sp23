@@ -1,8 +1,4 @@
 export function MenuItemLink({ url, name, description, tags }) {
-  console.log("---");
-  console.log(name);
-  console.log(description);
-  console.log("---");
   return (
     <a
       href={url}
